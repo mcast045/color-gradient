@@ -1,0 +1,38 @@
+.color_container {
+    height: 95vh;
+    display: flex;
+    justify-content: space-evenly;
+
+    & .color-1,
+    & .color-2 {
+        padding-top: 1rem;
+        position: relative;
+
+        & .color-1_values,
+        & .color-2_values {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        & .icon-absolute {
+            font-size: 2rem;
+            position: absolute;
+            top: 1rem;
+            right: -1rem;
+        }
+
+        & .icon-absolute:hover {
+            cursor: pointer;
+            animation: copyScale .5s ease-in forwards;
+        }
+    }
+}
+
+@keyframes copyScale {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}

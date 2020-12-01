@@ -1,0 +1,45 @@
+//Font
+$bp-medium: 50rem;
+$bp-small: 20rem; 
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 10px;
+
+    @media only screen and (max-width: $bp-medium) {
+        font-size: 50%;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        font-size: 35%;
+    }
+} 
+
+body { 
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+
+    min-height: 100vh;
+}
+
+.btn {
+    padding: 1rem;
+    border-radius: 1rem;
+    border: none;
+    color: whitesmoke;
+    outline: none;
+
+    &:hover {
+        cursor: pointer;
+        color: black;
+    }
+}

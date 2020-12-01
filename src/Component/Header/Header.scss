@@ -1,0 +1,13 @@
+.header_container {
+    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 50%;
+
+    & .header_util {
+        width: 10rem;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}

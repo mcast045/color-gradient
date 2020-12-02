@@ -1,52 +1,54 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { RGBContext } from '../../Context/RGBContext'
 import './Header.scss'
+import MenuController from './MenuController'
+import { saveGradient } from '../../Helpers/localStorage'
 
 export interface HeaderProps {
-    background: string,
-    value: number[],
     randomRGB: () => number[],
-    setCopyIconClassOne: React.Dispatch<React.SetStateAction<string>>,
-    setCopyIconClassTwo: React.Dispatch<React.SetStateAction<string>>,
-    setValue: React.Dispatch<React.SetStateAction<number[]>>
 }
 
-const Header: React.FC<HeaderProps> = ({ randomRGB, value, setValue, background, setCopyIconClassOne, setCopyIconClassTwo }) => {
+const Header: React.FC<HeaderProps> = ({ randomRGB }) => {
 
-    //Save gradients as an array of objects in local storage
-    const saveGradient = () => localStorage.setItem('colorGradient', value.toString())
-    const removeGradient = () => localStorage.removeItem('colorGradient')
+    const { rgbValues, background, setRgbValues, copyIconClass, setCopyIconClass, isShowingMenu } = useContext(RGBContext)
 
-    const findNewColors = () => {
-        setCopyIconClassOne('fas fa-copy')
-        setCopyIconClassTwo('fas fa-copy')
-        setValue(randomRGB())
+
+    const findNewColors = (): void => {
+        setCopyIconClass({ color_1: 'fas fa-copy', color_2: 'fas fa-copy', save: 'far fa-save' })
+        setRgbValues(randomRGB())
+    }
+
+    const saveClick = (): void => {
+        if (copyIconClass.save !== 'fas fa-check') {
+            saveGradient(rgbValues)
+            setCopyIconClass({ ...copyIconClass, save: 'fas fa-check' })
+        }
     }
 
     return (
-        <div className='header_container'>
-            <button
-                className='btn'
-                style={{ background }}
-                onClick={() => findNewColors()}>
-                Find New Colors
-                </button>
-
-            <div className='header_util'>
-                <button
-                    className='btn saveBtn'
-                    title='Save current gradient'
-                    style={{ background }}
-                    onClick={() => saveGradient()}>
-                    <i className="far fa-save" />
-                </button>
+        <div className='header'>
+            <div className='header_container'>
 
                 <button
-                    className='btn removeBtn'
-                    title='Remove current gradient'
+                    className='btn pointer'
                     style={{ background }}
-                    onClick={() => removeGradient()}>
-                    <i className="fas fa-trash" />
+                    onClick={() => findNewColors()}
+                    disabled={isShowingMenu}>
+                    Find New Colors
                 </button>
+
+                <div className='header_util'>
+                    <button
+                        className='btn saveBtn pointer'
+                        title='Save Current Gradient'
+                        style={{ background }}
+                        onClick={() => saveClick()}
+                        disabled={isShowingMenu}>
+                        <i className={`${copyIconClass.save}`} />
+                    </button>
+
+                    <MenuController />
+                </div>
             </div>
         </div>
     );

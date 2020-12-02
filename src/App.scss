@@ -1,6 +1,4 @@
-//Font
-$bp-medium: 50rem;
-$bp-small: 20rem; 
+@import './Variables.scss';
 
 *,
 *::after,
@@ -13,6 +11,7 @@ $bp-small: 20rem;
 html {
     box-sizing: border-box;
     font-size: 10px;
+    overflow: hidden;
 
     @media only screen and (max-width: $bp-medium) {
         font-size: 50%;
@@ -35,11 +34,21 @@ body {
     padding: 1rem;
     border-radius: 1rem;
     border: none;
-    color: whitesmoke;
+    color: $bg-light-color;
     outline: none;
 
     &:hover {
-        cursor: pointer;
-        color: black;
+        color: $bg-dark-color;
     }
+}
+
+.pointer:hover {
+    cursor: pointer;
+}
+
+.underline {
+    margin: auto;
+    width: 25%;
+    height: 1px;
+    background-color: $bg-dark-color;
 }

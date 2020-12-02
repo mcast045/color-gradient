@@ -1,0 +1,14 @@
+$bp-medium: 50rem;
+$bp-small: 20rem; 
+$header-height: 5vh;
+$bg-light-color: #eee;
+$bg-dark-color: #333;
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}

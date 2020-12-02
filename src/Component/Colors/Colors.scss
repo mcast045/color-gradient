@@ -22,17 +22,7 @@
         }
 
         & .icon-absolute:hover {
-            cursor: pointer;
-            animation: copyScale .5s ease-in forwards;
+            animation: scaleUp .5s ease-in forwards;
         }
-    }
-}
-
-@keyframes copyScale {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(1.2);
     }
 }

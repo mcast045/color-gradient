@@ -1,13 +1,20 @@
-.header_container {
-    height: 5vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 50%;
+@import '../../Variables.scss';
 
-    & .header_util {
-        width: 10rem;
+.header {
+    background-color: $bg-light-color;
+    border-bottom: 1px solid $bg-dark-color;
+
+    & .header_container {
+        height: $header-height;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 50%;
+    
+        & .header_util {
+            width: 10rem;
+            display: flex;
+            justify-content: space-evenly;
+        }
     }
 }

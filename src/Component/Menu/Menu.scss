@@ -1,0 +1,99 @@
+@import '../../Variables.scss';
+
+.menu_container {
+    background-color: $bg-light-color;
+    position: absolute;
+    top: calc($header-height - 1px);
+    right: 0;
+    width: 20%;
+    height: calc(100vh - 5vh);
+    border-left: 1px solid $bg-dark-color;
+
+    & .menu_title {
+        width: 100%;
+        margin: auto;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    & .menu_gradient_container {
+        display: flex;
+        flex-direction: column;
+
+        & .menu_empty {
+            text-align: center;
+            font-size: 2rem;
+            margin-top: 5rem;
+        }
+    }
+
+    & .menu_gradient {
+        margin: 1rem auto;
+        width: 90%;
+        height: 10vh;
+        border-radius: 1rem;
+
+        & .menu_gradient_content {
+            position: relative;
+            font-size: 1.2rem;
+            margin: auto;
+            width: 75%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            & .menu_gradient_content-1,
+            & .menu_gradient_content-2 {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            & .removeBtn {
+                color: $bg-dark-color;
+                background-color: transparent;
+                position: absolute;
+                z-index: 10 !important;
+                top: 0rem;
+                right: -4rem;
+                padding: 1rem;
+                font-size: 1rem;
+
+                &:hover {
+                    color: $bg-light-color;
+                    animation: scaleUp .1s ease-in forwards;
+                }
+            }
+
+            & .menu_gradient_content-2 {
+                align-items: flex-end;
+            }
+        }
+    }
+}
+
+.slideIn {
+    animation: menuSlideIn .5s ease-out;
+}
+
+.slideOut {
+    animation: menuSlideOut .5s ease-in;
+}
+
+@keyframes menuSlideIn {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes menuSlideOut {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}

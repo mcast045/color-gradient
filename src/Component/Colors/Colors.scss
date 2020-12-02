@@ -7,18 +7,25 @@
     & .color-2 {
         padding-top: 1rem;
         position: relative;
+        width: 20rem;
+
+        & .flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
         & .color-1_values,
         & .color-2_values {
             font-size: 2rem;
-            text-align: center;
+        }
+
+        & .color-2_values {
+            text-align: right;
         }
 
         & .icon-absolute {
             font-size: 2rem;
-            position: absolute;
-            top: 1rem;
-            right: -1rem;
         }
 
         & .icon-absolute:hover {

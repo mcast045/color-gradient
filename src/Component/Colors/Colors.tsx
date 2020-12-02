@@ -43,9 +43,11 @@ const Colors: React.FC<ColorsProps> = () => {
                 <div
                     onMouseEnter={() => setIsShowingCopyOne(!isShowingCopyOne)}
                     onMouseLeave={() => setIsShowingCopyOne(!isShowingCopyOne)}>
-                    <div className='color-1_values'>{`HEX: ${colorOneHex}`}</div>
+                    <div className='flex'>
+                        <div className='color-1_values'>{`HEX: ${colorOneHex}`}</div>
+                        <div style={{ visibility: isShowingCopyOne ? 'visible' : 'hidden' }}><i className={`${copyIconClass.color_1} icon-absolute pointer`} title='Copy HEX' onClick={() => copyHex()} /></div>
+                    </div>
                     <div className='color-1_values'>{`RGB: (${redOne}, ${greenOne}, ${blueOne})`}</div>
-                    {isShowingCopyOne && <i className={`${copyIconClass.color_1} icon-absolute pointer`} title='Copy HEX' onClick={() => copyHex()} />}
                 </div>
             </div>
 
@@ -55,13 +57,15 @@ const Colors: React.FC<ColorsProps> = () => {
                 <div
                     onMouseEnter={() => setIsShowingCopyTwo(!isShowingCopyTwo)}
                     onMouseLeave={() => setIsShowingCopyTwo(!isShowingCopyTwo)}>
-                    <div className='color-2_values'>{`HEX: ${colorTwoHex}`}</div>
+                    <div className='flex'>
+                        {<div style={{ visibility: isShowingCopyTwo ? 'visible' : 'hidden' }}><i className={`${copyIconClass.color_2} icon-absolute pointer`} title='Copy HEX' onClick={() => copyHex()} /></div>}
+                        <div className='color-2_values'>{`HEX: ${colorTwoHex}`}</div>
+                    </div>
                     <div className='color-2_values'>{`RGB: (${redTwo}, ${greenTwo}, ${blueTwo})`}</div>
-                    {isShowingCopyTwo && <i className={`${copyIconClass.color_2} icon-absolute pointer`} title='Copy HEX' onClick={() => copyHex()} />}
                 </div>
             </div>
 
-        </div>
+        </div >
     );
 }
 

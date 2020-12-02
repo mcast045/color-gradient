@@ -8,7 +8,7 @@ export interface HeaderColorSelectorProps {
 
 const HeaderColorSelector: React.FC<HeaderColorSelectorProps> = ({ randomRGB }) => {
 
-    const { rgbValues, background, setRgbValues, setCopyIconClass, isShowingMenu } = useContext(RGBContext)
+    const { rgbValues, background, setRgbValues, copyIconClass, setCopyIconClass, isShowingMenu } = useContext(RGBContext)
 
     const [redOne, greenOne, blueOne, redTwo, greenTwo, blueTwo] = rgbValues
 
@@ -23,10 +23,16 @@ const HeaderColorSelector: React.FC<HeaderColorSelectorProps> = ({ randomRGB }) 
         const updatedRgbValues = (hexToRgb(hexValue))
         const { r, g, b } = updatedRgbValues!
 
-        //Update a copy of rgbValues
+        //Update a copy of rgbValues and show updated icons
         const rgbValuescopy = [...rgbValues]
-        if ((e.target as HTMLInputElement).name === 'colorOne') rgbValuescopy.splice(0, 3, r, g, b)
-        else if ((e.target as HTMLInputElement).name === 'colorTwo') rgbValuescopy.splice(3, 3, r, g, b)
+        if ((e.target as HTMLInputElement).name === 'colorOne') {
+            rgbValuescopy.splice(0, 3, r, g, b)
+            setCopyIconClass({ ...copyIconClass, color_1: 'fas fa-copy', save: 'far fa-save' })
+        }
+        else if ((e.target as HTMLInputElement).name === 'colorTwo') {
+            rgbValuescopy.splice(3, 3, r, g, b)
+            setCopyIconClass({ ...copyIconClass, color_2: 'fas fa-copy', save: 'far fa-save' })
+        }
 
         //Update rgbValue state
         setRgbValues(rgbValuescopy)

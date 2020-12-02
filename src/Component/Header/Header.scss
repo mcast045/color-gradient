@@ -7,10 +7,17 @@
     & .header_container {
         height: $header-height;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
-        margin-left: 50%;
-    
+        margin-left: 10rem;
+
+        & .header-colorSelector{
+            width: calc(100vw - 10rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
         & .header_util {
             width: 10rem;
             display: flex;

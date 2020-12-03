@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/color-gradient/static/css/main.e98c1cb5.chunk.css",
+    "main.js": "/color-gradient/static/js/main.f993c166.chunk.js",
+    "main.js.map": "/color-gradient/static/js/main.f993c166.chunk.js.map",
+    "runtime-main.js": "/color-gradient/static/js/runtime-main.4c3ba508.js",
+    "runtime-main.js.map": "/color-gradient/static/js/runtime-main.4c3ba508.js.map",
+    "static/js/2.80ee690a.chunk.js": "/color-gradient/static/js/2.80ee690a.chunk.js",
+    "static/js/2.80ee690a.chunk.js.map": "/color-gradient/static/js/2.80ee690a.chunk.js.map",
+    "index.html": "/color-gradient/index.html",
+    "static/css/main.e98c1cb5.chunk.css.map": "/color-gradient/static/css/main.e98c1cb5.chunk.css.map",
+    "static/js/2.80ee690a.chunk.js.LICENSE.txt": "/color-gradient/static/js/2.80ee690a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4c3ba508.js",
+    "static/js/2.80ee690a.chunk.js",
+    "static/css/main.e98c1cb5.chunk.css",
+    "static/js/main.f993c166.chunk.js"
+  ]
+}

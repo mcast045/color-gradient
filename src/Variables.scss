@@ -4,10 +4,10 @@ $bg-light-color: #eee;
 $bg-dark-color: #333;
 
 @keyframes scaleUp {
-    0% {
+    to {
         transform: scale(1);
     }
-    100% {
+    from {
         transform: scale(1.2);
     }
 }

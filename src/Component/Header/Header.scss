@@ -12,10 +12,10 @@
         margin-left: 10rem;
 
         & .header_colorSelector {
-            width: calc(100vw - 10rem);
+            width: 100%;
             display: flex;
             align-items: center;
-            justify-content: space-around;
+            justify-content: space-evenly;
         }
 
         & .header_util {
@@ -35,12 +35,13 @@
             flex-direction: column-reverse;
 
             & .header_colorSelector {
-                justify-content: space-between;
+                width: 95%;
+                justify-content: space-evenly;
             }
 
             & .header_util {
-                width: calc(100vw - 10rem);
-                justify-content: space-between;
+                width: 95%;
+                justify-content: space-evenly;
             }
         }
     }

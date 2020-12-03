@@ -1,73 +1,75 @@
 @import '../../Variables.scss';
 
-.menu_container {
-    background-color: $bg-light-color;
-    position: absolute;
-    top: calc($header-height - 1px);
-    right: 0;
-    width: 20%;
-    height: calc(100vh - 5vh);
-    border-left: 1px solid $bg-dark-color;
 
-    & .menu_title {
-        font-size: 2rem;
-        text-align: center;
-    }
+    .menu_container {
+        background-color: $bg-light-color;
+        position: absolute;
+        top: calc(5vh - 1px);
+        right: 0;
+        width: 20%;
+        height: calc(100vh - 5vh);
+        border-left: 1px solid $bg-dark-color;
 
-    & .menu_gradient_container {
-        display: flex;
-        flex-direction: column;
-
-        & .menu_empty {
-            text-align: center;
+        & .menu_title {
             font-size: 2rem;
-            margin-top: 5rem;
+            text-align: center;
         }
-    }
 
-    & .menu_gradient {
-        margin: 1rem auto;
-        width: 90%;
-        height: 10vh;
-        border-radius: 1rem;
-
-        & .menu_gradient_content {
-            position: relative;
-            font-size: 1.2rem;
-            margin: auto;
-            width: 75%;
-            height: 100%;
+        & .menu_gradient_container {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
 
-            & .menu_gradient_content-1,
-            & .menu_gradient_content-2 {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+            & .menu_empty {
+                text-align: center;
+                font-size: 2rem;
+                margin-top: 5rem;
             }
+        }
 
-            & .removeBtn {
-                color: $bg-dark-color;
-                background-color: transparent;
-                position: absolute;
-                z-index: 10 !important;
-                top: 0rem;
-                right: -4rem;
-                padding: 1rem;
-                font-size: 1rem;
+        & .menu_gradient {
+            margin: 1rem auto;
+            width: 90%;
+            height: 10vh;
+            border-radius: 1rem;
 
-                &:hover {
-                    color: $bg-light-color;
-                    animation: scaleUp .1s ease-in forwards;
+            & .menu_gradient_content {
+                position: relative;
+                font-size: 1.2rem;
+                margin: auto;
+                width: 75%;
+                height: 100%;
+                display: flex;
+                justify-content: space-between;
+
+                & .menu_gradient_content-1,
+                & .menu_gradient_content-2 {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+
+                & .removeBtn {
+                    color: $bg-dark-color;
+                    background-color: transparent;
+                    position: absolute;
+                    z-index: 10 !important;
+                    top: 0rem;
+                    right: -4rem;
+                    padding: 1rem;
+                    font-size: 1rem;
+
+                    &:hover {
+                        color: $bg-light-color;
+                        animation: scaleUp .1s ease-in forwards;
+                    }
+                }
+
+                & .menu_gradient_content-2 {
+                    align-items: flex-end;
                 }
             }
-
-            & .menu_gradient_content-2 {
-                align-items: flex-end;
-            }
         }
-    }
+    
 }
 
 .slideIn {
@@ -123,9 +125,9 @@
 
 @media only screen and (max-width: 1350px) {
     .menu_container {
-        top: 50rem;
-        right: 0;
+        top: initial;
         width: 100%;
+        height: 100%;
         border: none;
         border-top: 1px solid $bg-dark-color;
 
@@ -183,7 +185,6 @@
 
 @media only screen and (max-width: 650px) {
     .menu_container {
-        top: 45rem;
 
         & .menu_gradient {
             height: 5vh;
@@ -191,24 +192,6 @@
 
         & .menu_gradient_container {
             display: flex;
-        }
-    }
-}
-
-@media only screen and (max-width: 450px) {
-    .menu_container {
-        & .menu_gradient {
-            & .menu_gradient_content {
-
-                & .menu_gradient_content-1,
-                & .menu_gradient_content-2 {
-                    font-size: .7rem;
-                }
-
-                & .removeBtn {
-                    right: -2.5rem;
-                }
-            }
         }
     }
 }

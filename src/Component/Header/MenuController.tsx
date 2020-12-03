@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { RGBContext } from '../../Context/RGBContext';
+import { MenuContext } from '../../Context/MenuContext';
 
 export interface MenuControllerProps {
 
@@ -7,7 +8,8 @@ export interface MenuControllerProps {
 
 const MenuController: React.FC<MenuControllerProps> = () => {
 
-    const { isShowingMenu, setIsShowingMenu, background, setSlideMenu } = useContext(RGBContext)
+    const { background } = useContext(RGBContext)
+    const { isShowingMenu, setIsShowingMenu, setSlideMenu } = useContext(MenuContext)
 
     const openMenu = () => {
         setIsShowingMenu(true)

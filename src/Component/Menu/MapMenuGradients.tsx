@@ -1,8 +1,8 @@
 import React, { Fragment, useContext } from 'react'
 import { RGBContext } from '../../Context/RGBContext'
+import { IconContext } from '../../Context/IconContext'
 import MenuGradients from './MenuGradients'
 import RemoveGradientBtn from './RemoveGradientBtn'
-
 
 export interface MapMenuGradientsProps {
     rawGradient: number[],
@@ -13,7 +13,8 @@ export interface MapMenuGradientsProps {
 
 const MapMenuGradients: React.FC<MapMenuGradientsProps> = ({ gradients, setGradients, rawGradient, getGradients }) => {
 
-    const { setCopyIconClass, copyIconClass, setRgbValues } = useContext(RGBContext)
+    const { setRgbValues } = useContext(RGBContext)
+    const { setCopyIconClass, copyIconClass } = useContext(IconContext)
 
     const getSavedGradient = (gradient: number[], e: React.FormEvent): void => {
         if ((e.target as HTMLDivElement).className !== 'fas fa-trash' && (e.target as HTMLDivElement).className !== 'btn removeBtn pointer') {

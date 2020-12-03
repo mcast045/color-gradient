@@ -7,6 +7,8 @@ import './App.scss'
 import Colors from './Component/Colors/Colors'
 import Header from './Component/Header/Header'
 import { RGBContext } from './Context/RGBContext'
+import { MenuContext } from './Context/MenuContext'
+import { IconContext } from './Context/IconContext'
 
 interface IRandomRGB {
   (): number[]
@@ -36,9 +38,15 @@ function App() {
 
   return (
     <div className="App">
-      <RGBContext.Provider value={{ rgbValues, setRgbValues, background, copyIconClass, setCopyIconClass, isShowingMenu, setIsShowingMenu, slideMenu, setSlideMenu }}>
-        <Header randomRGB={randomRGB} />
-        <Colors />
+      <RGBContext.Provider value={{ rgbValues, setRgbValues, background }}>
+        <MenuContext.Provider value={{ slideMenu, isShowingMenu, setSlideMenu, setIsShowingMenu }}>
+          <IconContext.Provider value={{ copyIconClass, setCopyIconClass }}>
+
+            <Header randomRGB={randomRGB} />
+            <Colors />
+
+          </IconContext.Provider>
+        </MenuContext.Provider>
       </RGBContext.Provider>
     </div>
   );

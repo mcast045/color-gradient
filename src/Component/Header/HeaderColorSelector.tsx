@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { RGBContext } from '../../Context/RGBContext'
+import { IconContext } from '../../Context/IconContext'
 import { hexToRgb, rgbToHex } from '../../Helpers/ColorConverters'
 
 export interface HeaderColorSelectorProps {
@@ -8,7 +9,8 @@ export interface HeaderColorSelectorProps {
 
 const HeaderColorSelector: React.FC<HeaderColorSelectorProps> = () => {
 
-    const { rgbValues, setRgbValues, copyIconClass, setCopyIconClass } = useContext(RGBContext)
+    const { rgbValues, setRgbValues } = useContext(RGBContext)
+    const { copyIconClass, setCopyIconClass } = useContext(IconContext)
 
     const [redOne, greenOne, blueOne, redTwo, greenTwo, blueTwo] = rgbValues
 

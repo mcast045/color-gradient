@@ -2,6 +2,8 @@ import React, { useContext } from 'react'
 import MenuController from './MenuController'
 import { saveGradient, getGradient } from '../../Helpers/localStorage'
 import { RGBContext } from '../../Context/RGBContext'
+import { IconContext } from '../../Context/IconContext'
+import { MenuContext } from '../../Context/MenuContext'
 
 export interface HeaderUtilsProps {
     randomRGB: () => number[]
@@ -9,7 +11,10 @@ export interface HeaderUtilsProps {
 
 const HeaderUtils: React.FC<HeaderUtilsProps> = ({ randomRGB }) => {
 
-    const { rgbValues, background, copyIconClass, setCopyIconClass, isShowingMenu, setRgbValues } = useContext(RGBContext)
+    const { rgbValues, background, setRgbValues } = useContext(RGBContext)
+    const { copyIconClass, setCopyIconClass } = useContext(IconContext)
+    const { isShowingMenu } = useContext(MenuContext)
+
     const rawGradient = JSON.parse(getGradient()!)
 
     const findNewColors = (): void => {

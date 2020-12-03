@@ -3,19 +3,14 @@ import { RGBContext } from '../../Context/RGBContext'
 import { hexToRgb, rgbToHex } from '../../Helpers/ColorConverters'
 
 export interface HeaderColorSelectorProps {
-    randomRGB: () => number[]
+
 }
 
-const HeaderColorSelector: React.FC<HeaderColorSelectorProps> = ({ randomRGB }) => {
+const HeaderColorSelector: React.FC<HeaderColorSelectorProps> = () => {
 
-    const { rgbValues, background, setRgbValues, copyIconClass, setCopyIconClass, isShowingMenu } = useContext(RGBContext)
+    const { rgbValues, setRgbValues, copyIconClass, setCopyIconClass } = useContext(RGBContext)
 
     const [redOne, greenOne, blueOne, redTwo, greenTwo, blueTwo] = rgbValues
-
-    const findNewColors = (): void => {
-        setCopyIconClass({ color_1: 'fas fa-copy', color_2: 'fas fa-copy', save: 'far fa-save' })
-        setRgbValues(randomRGB())
-    }
 
     const onChange = (e: React.FormEvent): void => {
         //Get input values
@@ -39,18 +34,9 @@ const HeaderColorSelector: React.FC<HeaderColorSelectorProps> = ({ randomRGB }) 
     }
 
     return (
-        <div className='header-colorSelector'>
-            <input type='color' name='colorOne' value={rgbToHex(redOne, greenOne, blueOne)} onChange={e => onChange(e)} />
-
-            <button
-                className='btn pointer'
-                style={{ background }}
-                onClick={() => findNewColors()}
-                disabled={isShowingMenu}>
-                Find New Colors
-            </button>
-
-            <input type='color' name='colorTwo' value={rgbToHex(redTwo, greenTwo, blueTwo)} onChange={e => onChange(e)} />
+        <div className='header_colorSelector'>
+            <input className='colorPicker pickerOne' type='color' name='colorOne' value={rgbToHex(redOne, greenOne, blueOne)} onChange={e => onChange(e)} />
+            <input className='colorPicker pickerTwo' type='color' name='colorTwo' value={rgbToHex(redTwo, greenTwo, blueTwo)} onChange={e => onChange(e)} />
         </div>
     );
 }

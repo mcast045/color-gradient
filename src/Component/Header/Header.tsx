@@ -11,8 +11,8 @@ const Header: React.FC<HeaderProps> = ({ randomRGB }) => {
     return (
         <div className='header'>
             <div className='header_container'>
-                <HeaderColorSelector randomRGB={randomRGB} />
-                <HeaderUtils />
+                <HeaderColorSelector />
+                <HeaderUtils randomRGB={randomRGB} />
             </div>
         </div>
     );

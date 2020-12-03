@@ -1,3 +1,5 @@
+@import '../../Variables.scss';
+
 .color_container {
     height: 95vh;
     display: flex;
@@ -30,6 +32,36 @@
 
         & .icon-absolute:hover {
             animation: scaleUp .5s ease-in forwards;
+        }
+    }
+}
+
+@media only screen and (max-width: $window-sm) {
+    .color_container {
+        & .color-1,
+        & .color-2 {
+
+            & .flex {
+                flex-direction: column;
+                align-items: flex-end;
+            }
+
+            & .reverse-column {
+                align-items: flex-start;
+                flex-direction: column-reverse;
+            }
+            
+            & .color-1_values,
+            & .color-2_values {
+                font-size: 1.5rem;
+                padding: 0 1rem;
+                justify-self: flex-end;
+            }
+
+            & .icon-absolute {
+                font-size: 1.4rem;
+                padding: 0 1rem;
+            }
         }
     }
 }

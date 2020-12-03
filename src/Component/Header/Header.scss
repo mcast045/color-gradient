@@ -11,7 +11,7 @@
         align-items: center;
         margin-left: 10rem;
 
-        & .header-colorSelector{
+        & .header_colorSelector {
             width: calc(100vw - 10rem);
             display: flex;
             align-items: center;
@@ -19,9 +19,29 @@
         }
 
         & .header_util {
-            width: 10rem;
+            width: 15rem;
             display: flex;
             justify-content: space-evenly;
+        }
+    }
+}
+
+@media only screen and (max-width: $window-sm) {
+    .header {
+
+        & .header_container {
+            height: 10vh;
+            margin: 0;
+            flex-direction: column-reverse;
+
+            & .header_colorSelector {
+                justify-content: space-between;
+            }
+
+            & .header_util {
+                width: calc(100vw - 10rem);
+                justify-content: space-between;
+            }
         }
     }
 }

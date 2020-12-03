@@ -43,7 +43,7 @@ const Colors: React.FC<ColorsProps> = () => {
                 <div
                     onMouseEnter={() => setIsShowingCopyOne(!isShowingCopyOne)}
                     onMouseLeave={() => setIsShowingCopyOne(!isShowingCopyOne)}>
-                    <div className='flex'>
+                    <div className='flex reverse-column'>
                         <div className='color-1_values'>{`HEX: ${colorOneHex}`}</div>
                         <div style={{ visibility: isShowingCopyOne ? 'visible' : 'hidden' }}><i className={`${copyIconClass.color_1} icon-absolute pointer`} title='Copy HEX' onClick={() => copyHex()} /></div>
                     </div>

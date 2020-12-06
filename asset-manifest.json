@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/color-gradient/static/css/main.727ed04d.chunk.css",
-    "main.js": "/color-gradient/static/js/main.0ab0fcae.chunk.js",
-    "main.js.map": "/color-gradient/static/js/main.0ab0fcae.chunk.js.map",
+    "main.js": "/color-gradient/static/js/main.e89473c2.chunk.js",
+    "main.js.map": "/color-gradient/static/js/main.e89473c2.chunk.js.map",
     "runtime-main.js": "/color-gradient/static/js/runtime-main.4c3ba508.js",
     "runtime-main.js.map": "/color-gradient/static/js/runtime-main.4c3ba508.js.map",
-    "static/js/2.80ee690a.chunk.js": "/color-gradient/static/js/2.80ee690a.chunk.js",
-    "static/js/2.80ee690a.chunk.js.map": "/color-gradient/static/js/2.80ee690a.chunk.js.map",
+    "static/js/2.15e118d8.chunk.js": "/color-gradient/static/js/2.15e118d8.chunk.js",
+    "static/js/2.15e118d8.chunk.js.map": "/color-gradient/static/js/2.15e118d8.chunk.js.map",
     "index.html": "/color-gradient/index.html",
     "static/css/main.727ed04d.chunk.css.map": "/color-gradient/static/css/main.727ed04d.chunk.css.map",
-    "static/js/2.80ee690a.chunk.js.LICENSE.txt": "/color-gradient/static/js/2.80ee690a.chunk.js.LICENSE.txt"
+    "static/js/2.15e118d8.chunk.js.LICENSE.txt": "/color-gradient/static/js/2.15e118d8.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4c3ba508.js",
-    "static/js/2.80ee690a.chunk.js",
+    "static/js/2.15e118d8.chunk.js",
     "static/css/main.727ed04d.chunk.css",
-    "static/js/main.0ab0fcae.chunk.js"
+    "static/js/main.e89473c2.chunk.js"
   ]
 }

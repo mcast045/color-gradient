@@ -11,7 +11,7 @@ export interface MenuProps {
 const Menu: React.FC<MenuProps> = () => {
 
     const rawGradient = JSON.parse(getGradient()!)
-    const [gradients, setGradients]: any[] = useState([])
+    const [savedGradients, setSavedGradients]: any[] = useState([])
 
     const { slideMenu } = useContext(MenuContext)
 
@@ -32,11 +32,11 @@ const Menu: React.FC<MenuProps> = () => {
     }
 
     useEffect(() => {
-        if (rawGradient && gradients.length * 6 !== rawGradient.length)
-            setGradients(getGradients(rawGradient))
+        if (rawGradient && savedGradients.length * 6 !== rawGradient.length)
+            setSavedGradients(getGradients(rawGradient))
         else if (!rawGradient)
-            setGradients([])
-    }, [rawGradient, gradients.length])
+            setSavedGradients([])
+    }, [rawGradient, savedGradients.length])
 
     return (
         <div className={`menu_container ${slideMenu}`}>
@@ -45,10 +45,10 @@ const Menu: React.FC<MenuProps> = () => {
             <div className='underline'></div>
 
             <div className='menu_gradient_container'>
-                {gradients.length === 0 ?
+                {savedGradients.length === 0 ?
                     <div className='menu_empty'>No Saved Gradients</div>
                     :
-                    <MapMenuGradients gradients={gradients} setGradients={setGradients} rawGradient={rawGradient} getGradients={getGradients} />
+                    <MapMenuGradients savedGradients={savedGradients} setSavedGradients={setSavedGradients} rawGradient={rawGradient} getGradients={getGradients} />
                 }
             </div>
         </div>

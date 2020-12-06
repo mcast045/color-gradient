@@ -9,6 +9,7 @@ import Header from './Component/Header/Header'
 import { RGBContext } from './Context/RGBContext'
 import { MenuContext } from './Context/MenuContext'
 import { IconContext } from './Context/IconContext'
+import { rgbToHex } from './Helpers/ColorConverters'
 
 interface IRandomRGB {
   (): number[]
@@ -31,14 +32,18 @@ function App() {
   const [isShowingMenu, setIsShowingMenu] = useState(false)
   const [copyIconClass, setCopyIconClass] = useState({ color_1: 'fas fa-copy', color_2: 'fas fa-copy', save: 'far fa-save' })
   const [slideMenu, setSlideMenu] = useState('slideIn')
+  const [colorOneHex, setColorOneHex] = useState('')
+  const [colorTwoHex, setColorTwoHex] = useState('')
 
   useEffect(() => {
     setBackground(`linear-gradient(to right, rgba(${rgbValues[0]}, ${rgbValues[1]}, ${rgbValues[2]}, 1), rgba(${rgbValues[3]}, ${rgbValues[4]}, ${rgbValues[5]}, 1))`)
+    setColorOneHex(rgbToHex(rgbValues[0], rgbValues[1], rgbValues[2]))
+    setColorTwoHex(rgbToHex(rgbValues[3], rgbValues[4], rgbValues[5]))
   }, [rgbValues])
 
   return (
     <div className="App">
-      <RGBContext.Provider value={{ rgbValues, setRgbValues, background }}>
+      <RGBContext.Provider value={{ rgbValues, setRgbValues, colorOneHex, colorTwoHex, background }}>
         <MenuContext.Provider value={{ slideMenu, isShowingMenu, setSlideMenu, setIsShowingMenu }}>
           <IconContext.Provider value={{ copyIconClass, setCopyIconClass }}>
 

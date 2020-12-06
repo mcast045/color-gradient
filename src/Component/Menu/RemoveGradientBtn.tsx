@@ -7,10 +7,10 @@ export interface RemoveGradientBtnProps {
     i: number,
     rawGradient: number[],
     getGradients: (gradient: number[]) => number[],
-    setGradients: React.Dispatch<React.SetStateAction<any[]>>
+    setSavedGradients: React.Dispatch<React.SetStateAction<any[]>>
 }
 
-const RemoveGradientBtn: React.FC<RemoveGradientBtnProps> = ({ i, setGradients, getGradients, rawGradient }) => {
+const RemoveGradientBtn: React.FC<RemoveGradientBtnProps> = ({ i, setSavedGradients, getGradients, rawGradient }) => {
 
     const { rgbValues } = useContext(RGBContext)
     const { setCopyIconClass, copyIconClass } = useContext(IconContext)
@@ -27,7 +27,7 @@ const RemoveGradientBtn: React.FC<RemoveGradientBtnProps> = ({ i, setGradients, 
                 saveGradient(rawGradient)
 
             //Re-renders Menu
-            setGradients(getGradients(rawGradient))
+            setSavedGradients(getGradients(rawGradient))
 
             //Change save icon if current gradient = the removed, saved, gradient 
             if (rgbValues.every((value: number, i: number) => value === removedRgbValues[i]))

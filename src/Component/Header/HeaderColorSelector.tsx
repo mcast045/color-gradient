@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { RGBContext } from '../../Context/RGBContext'
 import { IconContext } from '../../Context/IconContext'
-import { hexToRgb, rgbToHex } from '../../Helpers/ColorConverters'
+import { hexToRgb } from '../../Helpers/ColorConverters'
 
 export interface HeaderColorSelectorProps {
 
@@ -9,10 +9,8 @@ export interface HeaderColorSelectorProps {
 
 const HeaderColorSelector: React.FC<HeaderColorSelectorProps> = () => {
 
-    const { rgbValues, setRgbValues } = useContext(RGBContext)
+    const { rgbValues, colorOneHex, colorTwoHex, setRgbValues } = useContext(RGBContext)
     const { copyIconClass, setCopyIconClass } = useContext(IconContext)
-
-    const [redOne, greenOne, blueOne, redTwo, greenTwo, blueTwo] = rgbValues
 
     const onChange = (e: React.FormEvent): void => {
         //Get input values
@@ -37,8 +35,8 @@ const HeaderColorSelector: React.FC<HeaderColorSelectorProps> = () => {
 
     return (
         <div className='header_colorSelector'>
-            <input className='colorPicker pickerOne' type='color' name='colorOne' value={rgbToHex(redOne, greenOne, blueOne)} onChange={e => onChange(e)} />
-            <input className='colorPicker pickerTwo' type='color' name='colorTwo' value={rgbToHex(redTwo, greenTwo, blueTwo)} onChange={e => onChange(e)} />
+            <input className='colorPicker pickerOne' type='color' name='colorOne' value={colorOneHex} onChange={e => onChange(e)} />
+            <input className='colorPicker pickerTwo' type='color' name='colorTwo' value={colorTwoHex} onChange={e => onChange(e)} />
         </div>
     );
 }

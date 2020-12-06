@@ -13,6 +13,7 @@ const componentToHex = (component: number): string => {
 export const rgbToHex = (red: number, green: number, blue: number): string =>
     `#${componentToHex(red)}${componentToHex(green)}${componentToHex(blue)}`
 
+
 export const hexToRgb = (hex: string): IHexToRgb | null => {
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
     return result ? {

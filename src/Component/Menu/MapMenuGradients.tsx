@@ -6,12 +6,12 @@ import RemoveGradientBtn from './RemoveGradientBtn'
 
 export interface MapMenuGradientsProps {
     rawGradient: number[],
-    gradients: any,
+    savedGradients: any,
     getGradients: (gradient: number[]) => number[],
-    setGradients: React.Dispatch<React.SetStateAction<any[]>>
+    setSavedGradients: React.Dispatch<React.SetStateAction<any[]>>
 }
 
-const MapMenuGradients: React.FC<MapMenuGradientsProps> = ({ gradients, setGradients, rawGradient, getGradients }) => {
+const MapMenuGradients: React.FC<MapMenuGradientsProps> = ({ savedGradients, setSavedGradients, rawGradient, getGradients }) => {
 
     const { setRgbValues } = useContext(RGBContext)
     const { setCopyIconClass, copyIconClass } = useContext(IconContext)
@@ -25,11 +25,11 @@ const MapMenuGradients: React.FC<MapMenuGradientsProps> = ({ gradients, setGradi
 
     return (
         <Fragment>
-            {gradients.map((gradient: number[], i: number) => (
-                <div key={i} onClick={(e) => getSavedGradient(gradient, e)} className='menu_gradient pointer' style={{ background: `linear-gradient(to right, rgba(${gradient[0]}, ${gradient[1]}, ${gradient[2]}, 1), rgba(${gradient[3]}, ${gradient[4]}, ${gradient[5]}, 1))` }}>
+            {savedGradients.map((savedGradient: number[], i: number) => (
+                <div key={i} onClick={(e) => getSavedGradient(savedGradient, e)} className='menu_gradient pointer' style={{ background: `linear-gradient(to right, rgba(${savedGradient[0]}, ${savedGradient[1]}, ${savedGradient[2]}, 1), rgba(${savedGradient[3]}, ${savedGradient[4]}, ${savedGradient[5]}, 1))` }}>
                     <div className='menu_gradient_content' >
-                        <MenuGradients gradient={gradient} />
-                        <RemoveGradientBtn i={i} setGradients={setGradients} getGradients={getGradients} rawGradient={rawGradient} />
+                        <MenuGradients savedGradient={savedGradient} />
+                        <RemoveGradientBtn i={i} setSavedGradients={setSavedGradients} getGradients={getGradients} rawGradient={rawGradient} />
                     </div>
                 </div>
             ))}

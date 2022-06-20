@@ -1,7 +1,6 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import './Colors.scss'
-import { RGBContext } from '../../Context/RGBContext'
-import { MenuContext } from '../../Context/MenuContext'
+import { useRGBContext, useMenuContext } from '../../Context'
 import Menu from '../Menu/Menu'
 import ColorDescription from './ColorDescription'
 
@@ -11,8 +10,8 @@ export interface ColorsProps {
 
 const Colors: React.FC<ColorsProps> = () => {
 
-    const { background } = useContext(RGBContext)
-    const { isShowingMenu } = useContext(MenuContext)
+    const { background } = useRGBContext()
+    const { isShowingMenu } = useMenuContext()
 
     return (
         <div className='color_container' style={{ background }}>

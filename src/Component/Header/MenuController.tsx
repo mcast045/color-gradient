@@ -1,6 +1,5 @@
-import React, { useContext, useState, useEffect } from 'react'
-import { RGBContext } from '../../Context/RGBContext';
-import { MenuContext } from '../../Context/MenuContext';
+import React, { useState, useEffect } from 'react'
+import { useMenuContext, useRGBContext } from '../../Context';
 
 export interface MenuControllerProps {
 
@@ -8,8 +7,8 @@ export interface MenuControllerProps {
 
 const MenuController: React.FC<MenuControllerProps> = () => {
 
-    const { background } = useContext(RGBContext)
-    const { isShowingMenu, setIsShowingMenu, setSlideMenu } = useContext(MenuContext)
+    const { background } = useRGBContext()
+    const { isShowingMenu, setIsShowingMenu, setSlideMenu } = useMenuContext()
     const menuCssBreakpoint = window.screen.width
     const [isHorizontalArrow, setIsHorizontalArrow] = useState(true)
 

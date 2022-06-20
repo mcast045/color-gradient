@@ -1,6 +1,5 @@
-import React, { useContext } from 'react'
-import { RGBContext } from '../../Context/RGBContext'
-import { IconContext } from '../../Context/IconContext'
+import React from 'react'
+import { useRGBContext, useIconContext } from '../../Context'
 import { removeGradient, saveGradient } from '../../Helpers/localStorage'
 
 export interface RemoveGradientBtnProps {
@@ -12,8 +11,8 @@ export interface RemoveGradientBtnProps {
 
 const RemoveGradientBtn: React.FC<RemoveGradientBtnProps> = ({ i, setSavedGradients, getGradients, rawGradient }) => {
 
-    const { rgbValues } = useContext(RGBContext)
-    const { setCopyIconClass, copyIconClass } = useContext(IconContext)
+    const { rgbValues } = useRGBContext()
+    const { setCopyIconClass, copyIconClass } = useIconContext()
 
     const removeSavedGradient = (startIdx: number, e: React.FormEvent): void => {
         if ((e.target as HTMLDivElement).className === 'fas fa-trash' || (e.target as HTMLButtonElement).className === 'btn removeBtn pointer') {

@@ -1,6 +1,5 @@
-import React, { useContext, useState } from 'react'
-import { RGBContext } from '../../Context/RGBContext'
-import { IconContext } from '../../Context/IconContext'
+import React, { useState } from 'react'
+import { useRGBContext, useIconContext, } from '../../Context'
 import { setTextColor } from '../../Helpers/ColorConverters'
 
 export interface ColorDescriptionProps {
@@ -9,8 +8,8 @@ export interface ColorDescriptionProps {
 
 const ColorDescription: React.FC<ColorDescriptionProps> = () => {
 
-    const { rgbValues, colorOneHex, colorTwoHex } = useContext(RGBContext)
-    const { copyIconClass, setCopyIconClass } = useContext(IconContext)
+    const { rgbValues, colorOneHex, colorTwoHex } = useRGBContext()
+    const { copyIconClass, setCopyIconClass } = useIconContext()
 
     const [redOne, greenOne, blueOne, redTwo, greenTwo, blueTwo] = rgbValues
 

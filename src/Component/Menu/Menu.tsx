@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Menu.scss'
 import { getGradient } from '../../Helpers/localStorage'
-import { MenuContext } from '../../Context/MenuContext'
+import { useMenuContext } from '../../Context'
 import MapMenuGradients from './MapMenuGradients'
 
 export interface MenuProps {
@@ -13,7 +13,7 @@ const Menu: React.FC<MenuProps> = () => {
     const rawGradient = JSON.parse(getGradient()!)
     const [savedGradients, setSavedGradients]: any[] = useState([])
 
-    const { slideMenu } = useContext(MenuContext)
+    const { slideMenu } = useMenuContext()
 
     const getGradients = (gradient: number[]): number[] => {
         const allSavedGradients: any[] = []

@@ -31,3 +31,17 @@ export const setTextColor = (hexColor: string): string => {
     //matches scss variable $bg-dark-color : $bg-light-color
     return (yiq >= 128) ? '#333' : '#eee';
 }
+
+interface IRandomRGB {
+    (): number[]
+}
+
+export const randomRGB: IRandomRGB = () => {
+    const redOne = Math.floor(Math.random() * 256)
+    const greenOne = Math.floor(Math.random() * 256)
+    const blueOne = Math.floor(Math.random() * 256)
+    const redTwo = Math.floor(Math.random() * 256)
+    const greenTow = Math.floor(Math.random() * 256)
+    const blueTwo = Math.floor(Math.random() * 256)
+    return [redOne, greenOne, blueOne, redTwo, greenTow, blueTwo]
+}

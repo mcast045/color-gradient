@@ -1,6 +1,5 @@
-import React, { useContext } from 'react'
-import { RGBContext } from '../../Context/RGBContext'
-import { IconContext } from '../../Context/IconContext'
+import React from 'react'
+import { useRGBContext, useIconContext } from '../../Context'
 import { hexToRgb } from '../../Helpers/ColorConverters'
 
 export interface HeaderColorSelectorProps {
@@ -9,8 +8,8 @@ export interface HeaderColorSelectorProps {
 
 const HeaderColorSelector: React.FC<HeaderColorSelectorProps> = () => {
 
-    const { rgbValues, colorOneHex, colorTwoHex, setRgbValues } = useContext(RGBContext)
-    const { copyIconClass, setCopyIconClass } = useContext(IconContext)
+    const { rgbValues, colorOneHex, colorTwoHex, setRgbValues } = useRGBContext()
+    const { copyIconClass, setCopyIconClass } = useIconContext()
 
     const onChange = (e: React.FormEvent): void => {
         //Get input values
